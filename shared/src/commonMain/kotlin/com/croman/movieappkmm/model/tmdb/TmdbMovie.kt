@@ -1,10 +1,10 @@
-package com.croman.movieappkmm.data.model
+package com.croman.movieappkmm.model.tmdb
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class Movie(
+data class TmdbMovie(
     val id: Int,
     val overview: String,
     @SerialName("poster_path")

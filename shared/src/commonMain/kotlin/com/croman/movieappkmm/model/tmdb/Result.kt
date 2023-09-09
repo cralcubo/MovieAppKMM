@@ -1,4 +1,4 @@
-package com.croman.movieappkmm.data.model
+package com.croman.movieappkmm.model.tmdb
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
@@ -6,5 +6,5 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class Result(
     @SerialName("results")
-    val movies: List<Movie>
+    val tmdbMovies: List<TmdbMovie>
 )

@@ -2,6 +2,7 @@ plugins {
     kotlin("multiplatform")
     id("com.android.library")
     kotlin("plugin.serialization") // Automatically generates instances of serialization interfaces for classes marked @Serializable
+    id("app.cash.sqldelight")
 }
 
 @OptIn(org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi::class)
@@ -50,7 +51,8 @@ kotlin {
             dependencies {
                 // Put here all the platform drivers for Android
                 implementation(platform("com.croman:platform"))
-                implementation("io.ktor:ktor-client-okhttp")
+                implementation("app.cash.sqldelight:android-driver:2.0.0")
+//                implementation("io.ktor:ktor-client-okhttp")
             }
 
         }
@@ -58,7 +60,8 @@ kotlin {
             dependencies {
                 // Put here all the platform drivers for iOS
                 implementation(platform("com.croman:platform"))
-                implementation("io.ktor:ktor-client-darwin")
+                implementation("app.cash.sqldelight:native-driver:2.0.0")
+//                implementation("io.ktor:ktor-client-darwin")
             }
         }
     }
@@ -74,5 +77,12 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
+}
 
+sqldelight {
+    databases {
+        create("MovieDatabase") {
+            packageName.set("com.croman")
+        }
+    }
 }

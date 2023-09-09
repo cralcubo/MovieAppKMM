@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS MovieRating(
+    id INTEGER NOT NULL PRIMARY KEY,
+    rating INTEGER NOT NULL
+);
+
+retrieveMovieRating:
+SELECT * FROM MovieRating WHERE id = ?;
+
+retrieveAllMovieRatings:
+SELECT * FROM MovieRating;
+
+insertMovieRating:
+INSERT OR REPLACE INTO MovieRating(id, rating) VALUES (?, ?);

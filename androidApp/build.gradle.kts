@@ -1,7 +1,7 @@
 plugins {
     id("com.android.application")
     kotlin("android")
-    id("kotlin-kapt")
+    kotlin("kapt")
 }
 
 android {
@@ -18,7 +18,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.7"
+        kotlinCompilerExtensionVersion = "1.4.8"
     }
     packaging {
         resources {
@@ -58,7 +58,4 @@ dependencies {
     implementation("io.insert-koin:koin-android")
 
     implementation("io.ktor:ktor-client-okhttp")
-//    implementation("io.ktor:ktor-client-core") // The main functionality is here
-//    implementation("io.ktor:ktor-client-content-negotiation") // ContentNegotiation: Negotiates media types between client and server, Serialize and deserialize content in a specific format (JSON, ProtoBuff and others)
-//    implementation("io.ktor:ktor-serialization-kotlinx-json") // Artifact for JSON serializer
 }

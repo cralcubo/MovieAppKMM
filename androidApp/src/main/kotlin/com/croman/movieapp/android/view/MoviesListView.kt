@@ -7,13 +7,11 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
-import com.croman.movieapp.android.view_model.MovieViewModel
-import com.croman.movieappkmm.data.model.Movie
+import com.croman.movieappkmm.model.Movie
 
 @Composable
 fun MoviesListView(movies: List<Movie>) {
